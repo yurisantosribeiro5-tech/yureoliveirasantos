@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Currículo - Yure Oliveira Santos</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #555;
+            background: #fff;
+        }
+
+        .navbar {
+            background: #fff;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+            padding: 15px 0;
+        }
+
+        .navbar-brand {
+            font-size: 22px;
+            font-weight: bold;
+            color: #333 !important;
+        }
+
+        .navbar-brand span {
+            color: #d89b00;
+        }
+
+        .nav-link {
+            color: #555 !important;
+            margin-left: 15px;
+            font-weight: 600;
+        }
+
+        .nav-link:hover {
+            color: #d89b00 !important;
+        }
+
+        #inicio {
+            padding: 150px 0 100px;
+            background: #f8f8f8;
+        }
+
+        .inicio {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            align-items: center;
+            gap: 50px;
+            min-height: 500px;
+        }
+
+        .inicio h5 {
+            color: #d89b00;
+            letter-spacing: 3px;
+            font-weight: bold;
+        }
+
+        .inicio h1 {
+            font-size: 55px;
+            color: #333;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+
+        .inicio h1 span {
+            color: #164a7b;
+        }
+
+        .inicio h3 {
+            font-size: 25px;
+            color: #777;
+            font-weight: normal;
+        }
+
+        .inicio p {
+            max-width: 600px;
+            line-height: 1.8;
+            margin-top: 20px;
+        }
+
+        .foto {
+            text-align: center;
+        }
+
+        .foto img {
+            width: 270px;
+            height: 330px;
+            object-fit: cover;
+            border-radius: 5px;
+            border: 8px solid #fff;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .botao {
+            display: inline-block;
+            background: #164a7b;
+            color: white;
+            padding: 13px 28px;
+            margin-top: 20px;
+            text-decoration: none;
+            border-radius: 3px;
+        }
+
+        .botao:hover {
+            background: #d89b00;
+            color: #222;
+        }
+
+        .secao {
+            padding: 90px 0;
+        }
+
+        .titulo {
+            margin-bottom: 45px;
+        }
+
+        .titulo small {
+            color: #d89b00;
+            font-weight: bold;
+            letter-spacing: 3px;
+        }
+
+        .titulo h2 {
+            color: #333;
+            font-size: 38px;
+            margin-top: 8px;
+        }
+
+        .linha {
+            width: 55px;
+            height: 3px;
+            background: #d89b00;
+            margin-top: 15px;
+        }
+
+        #objetivo {
+            background: #fff;
+        }
+
+        .objetivo {
+            padding: 35px;
+            background: #f8f8f8;
+            border-left: 5px solid #d89b00;
+        }
+
+        .objetivo p {
+            margin: 0;
+            line-height: 1.9;
+            text-align: justify;
+        }
+
+        #qualificacoes {
+            background: #f8f8f8;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 35px;
+        }
+
+        .card {
+            border: none;
+            border-radius: 0;
+            padding: 30px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+        }
+
+        .card h3 {
+            color: #164a7b;
+            margin-bottom: 25px;
+        }
+
+        .habilidade {
+            padding: 14px;
+            margin-bottom: 10px;
+            background: #f8f8f8;
+            border-left: 4px solid #d89b00;
+        }
+
+        .formacao {
+            padding: 16px;
+            margin-bottom: 15px;
+            background: #f8f8f8;
+            border-left: 4px solid #164a7b;
+        }
+
+        #contato {
+            background: #fff;
+        }
+
+        .contato {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 35px;
+        }
+
+        .contato-card {
+            padding: 30px;
+            background: #f8f8f8;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+
+        .contato-card h3 {
+            color: #164a7b;
+            border-bottom: 2px solid #d89b00;
+            padding-bottom: 12px;
+            margin-bottom: 20px;
+        }
+
+        .info {
+            padding: 13px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .info strong {
+            display: block;
+            color: #164a7b;
+            margin-bottom: 5px;
+        }
+
+        .info a {
+            color: #555;
+            text-decoration: none;
+        }
+
+        .info a:hover {
+            color: #d89b00;
+        }
+
+        /* Formulário */
+
+        .formulario input,
+        .formulario textarea {
+            width: 100%;
+            padding: 13px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            font-family: Arial, sans-serif;
+            outline: none;
+        }
+
+        .formulario input:focus,
+        .formulario textarea:focus {
+            border-color: #164a7b;
+        }
+
+        .formulario textarea {
+            resize: vertical;
+        }
+
+        .formulario button {
+            background: #164a7b;
+            color: white;
+            border: none;
+            padding: 13px 28px;
+            cursor: pointer;
+            border-radius: 3px;
+        }
+
+        .formulario button:hover {
+            background: #d89b00;
+            color: #222;
+        }
+
+        .formulario button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        #resultado {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        #instagram {
+            background: #164a7b;
+            color: white;
+            text-align: center;
+            padding: 70px 20px;
+        }
+
+        #instagram h2 {
+            margin-bottom: 15px;
+        }
+
+        .instagram-botao {
+            display: inline-block;
+            background: #d89b00;
+            color: #222;
+            padding: 13px 30px;
+            margin-top: 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .instagram-botao:hover {
+            background: white;
+        }
+
+        footer {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        footer p {
+            margin: 5px;
+        }
+
+        footer span {
+            color: #d89b00;
+        }
+
+        @media (max-width: 900px) {
+
+            .inicio {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .inicio p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .foto {
+                order: -1;
+            }
+
+            .grid,
+            .contato {
+                grid-template-columns: 1fr;
+            }
+
+            .inicio h1 {
+                font-size: 45px;
+            }
+        }
+
+        @media (max-width: 576px) {
+
+            #inicio {
+                padding: 120px 20px 70px;
+            }
+
+            .inicio h1 {
+                font-size: 35px;
+            }
+
+            .inicio h3 {
+                font-size: 20px;
+            }
+
+            .foto img {
+                width: 190px;
+                height: 230px;
+            }
+
+            .secao {
+                padding: 65px 20px;
+            }
+
+            .titulo h2 {
+                font-size: 30px;
+            }
+
+            .objetivo,
+            .card,
+            .contato-card {
+                padding: 22px;
+            }
+
+            .objetivo p {
+                text-align: left;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+<!-- MENU -->
+
+<nav class="navbar navbar-expand-lg fixed-top">
+
+    <div class="container">
+
+        <a class="navbar-brand" href="#inicio">
+            EDITOR <span>PROFISSIONAL</span>
+        </a>
+
+        <button class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#menu">
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+        <div class="collapse navbar-collapse" id="menu">
+
+            <ul class="navbar-nav ms-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#inicio">Início</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#objetivo">Objetivo</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#qualificacoes">Qualificações</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#contato">Contato</a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+<!-- INÍCIO -->
+
+<section id="inicio">
+
+    <div class="container">
+
+        <div class="inicio">
+
+            <div>
+
+                <h5>CURRÍCULO</h5>
+
+                <h1>
+                    Yure <span>Oliveira Santos</span>
+                </h1>
+
+                <h3>Editor e Designer Gráfico</h3>
+
+                <p>
+                    Profissional interessado em comunicação,
+                    criação de conteúdo, edição de imagens,
+                    vídeos e design gráfico.
+                </p>
+
+                <a href="#contato" class="botao">
+                    Entre em contato
+                </a>
+
+            </div>
+
+            <div class="foto">
+
+                <img src="https://cajui.ifnmg.edu.br/arquivo/avatar/40/9e4fbe7a-b7e0-417e-a7d5-2b36aecfbfab.png?m=1786765582"
+                     alt="Foto de Yure Oliveira Santos">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- OBJETIVO -->
+
+<section class="secao" id="objetivo">
+
+    <div class="container">
+
+        <div class="titulo">
+
+            <small>PERFIL</small>
+
+            <h2>Objetivo</h2>
+
+            <div class="linha"></div>
+
+        </div>
+
+        <div class="objetivo">
+
+            <p>
+                Meu objetivo é aumentar a visibilidade da empresa
+                e o alcance da marca, engajar com o público e
+                promover a fidelidade do cliente utilizando
+                comunicação efetiva, criatividade e conhecimento.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- QUALIFICAÇÕES -->
+
+<section class="secao" id="qualificacoes">
+
+    <div class="container">
+
+        <div class="titulo">
+
+            <small>QUALIFICAÇÕES</small>
+
+            <h2>Habilidades e Formação</h2>
+
+            <div class="linha"></div>
+
+        </div>
+
+        <div class="grid">
+
+            <div class="card">
+
+                <h3>Habilidades</h3>
+
+                <div class="habilidade">
+                    Boa comunicação e trabalho em equipe
+                </div>
+
+                <div class="habilidade">
+                    Edição de fotos e vídeos
+                </div>
+
+                <div class="habilidade">
+                    Criação de conteúdo fotográfico
+                </div>
+
+                <div class="habilidade">
+                    Análise para marketing e propaganda
+                </div>
+
+                <div class="habilidade">
+                    Video Maker e Design
+                </div>
+
+                <div class="habilidade">
+                    Pacote Office
+                </div>
+
+            </div>
+
+            <div class="card">
+
+                <h3>Formação</h3>
+
+                <div class="formacao">
+                    <strong>Ensino Médio Completo</strong>
+                </div>
+
+                <div class="formacao">
+                    <strong>Informática Básica - SENAI</strong>
+                </div>
+
+                <div class="formacao">
+                    <strong>
+                        Técnico em Informática -
+                        Instituto Federal Norte de Minas
+                        (2025 - 2027)
+                    </strong>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CONTATO -->
+
+<section class="secao" id="contato">
+
+    <div class="container">
+
+        <div class="titulo">
+
+            <small>CONTATO</small>
+
+            <h2>Informações</h2>
+
+            <div class="linha"></div>
+
+        </div>
+
+        <div class="contato">
+
+            <div class="contato-card">
+
+                <h3>Contato</h3>
+
+                <div class="info">
+
+                    <strong>Telefone</strong>
+
+                    <a href="tel:+5538998585285">
+                        (38) 99858-5285
+                    </a>
+
+                </div>
+
+                <div class="info">
+
+                    <strong>E-mail</strong>
+
+                    <a href="mailto:yurisantosribeiro5@gmail.com">
+                        yurisantosribeiro5@gmail.com
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="contato-card">
+
+                <h3>Endereço</h3>
+
+                <div class="info">
+
+                    <strong>Cidade</strong>
+
+                    São João das Missões - MG
+
+                </div>
+
+                <div class="info">
+
+                    <strong>Endereço</strong>
+
+                    Rua Delegado João Rodrigues, nº 57
+
+                </div>
+
+                <div class="info">
+
+                    <strong>CEP</strong>
+
+                    39475-000
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- FORMULÁRIO WEB3FORMS -->
+
+        <div class="contato-card mt-4">
+
+            <h3>Envie uma mensagem</h3>
+
+            <form class="formulario" id="form-contato">
+
+                <input type="hidden"
+                       name="access_key"
+                       value="8898ab86-8a99-4219-959d-4d8c226ab89c">
+
+                <input type="text"
+                       name="name"
+                       placeholder="Seu nome"
+                       required>
+
+                <input type="email"
+                       name="email"
+                       placeholder="Seu e-mail"
+                       required>
+
+                <textarea name="message"
+                          rows="5"
+                          maxlength="1000"
+                          placeholder="Digite sua mensagem"
+                          required></textarea>
+
+                <button type="submit" id="btn-enviar">
+                    Enviar mensagem
+                </button>
+
+                <p id="resultado" role="status" aria-live="polite"></p>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- INSTAGRAM -->
+
+<section id="instagram">
+
+    <div class="container">
+
+        <h2>Rede Social</h2>
+
+        <p>
+            Acompanhe meu trabalho e meus projetos.
+        </p>
+
+        <a href="https://www.instagram.com/yuri_ribeirorc_"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="instagram-botao">
+
+            Acessar Instagram
+
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- RODAPÉ -->
+
+<footer>
+
+    <p>© 2026</p>
+
+    <p>
+        Todos os direitos reservados
+    </p>
+
+    <p>
+        Desenvolvido por
+        <span>Yure Oliveira Santos</span>
+    </p>
+
+</footer>
+
+
+<!-- JAVASCRIPT DO FORMULÁRIO -->
+
+<script>
+
+    const formulario = document.getElementById("form-contato");
+    const resultado = document.getElementById("resultado");
+    const botao = document.getElementById("btn-enviar");
+
+    formulario.addEventListener("submit", async function(event) {
+
+        event.preventDefault();
+
+        botao.disabled = true;
+        botao.innerText = "Enviando...";
+
+        resultado.innerText = "";
+
+        const dados = new FormData(formulario);
+
+        try {
+
+            const resposta = await fetch(
+                "https://api.web3forms.com/submit",
+                {
+                    method: "POST",
+                    body: dados
+                }
+            );
+
+            const resultadoAPI = await resposta.json();
+
+            if (resposta.ok && resultadoAPI.success) {
+
+                resultado.innerText = "Mensagem enviada com sucesso!";
+                resultado.style.color = "green";
+
+                formulario.reset();
+
+            } else {
+
+                resultado.innerText = "Erro ao enviar mensagem. Tente novamente.";
+                resultado.style.color = "red";
+
+            }
+
+        } catch (erro) {
+
+            resultado.innerText = "Erro de conexão. Verifique sua internet.";
+            resultado.style.color = "red";
+
+        }
+
+        botao.disabled = false;
+        botao.innerText = "Enviar mensagem";
+
+    });
+
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+</script>
+
+</body>
+</html>
